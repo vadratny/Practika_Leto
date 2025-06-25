@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../../index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Q&A</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Языки
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../pagesPython/mainPage.html">Python</a></li>
+                            <li><a class="dropdown-item" href="../pagesJavaScript/mianPage.html">JavaScript</a></li>
+                            <li><a class="dropdown-item" href="../pagesCSharp/mainPage.html">C#</a></li>
+                            <li><a class="dropdown-item" href="../pagesPHP/mainPage.html">PHP</a></li>
+                            <li><a class="dropdown-item" href="../pagesJava/mainPage.html">Java</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Войти</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--  -->
+    <div class="container m-5">
+        <div class="row">
+            <div class="col-3">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Глава 1. Введение в Python</h5>
+                          <p class="card-text">Язык программирования Python. Установка Python и первая программа на Windows</p>
+                        </div>
+                      </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Глава 2. Основы Python</h5>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse1" aria-expanded="false"
+                                        aria-controls="flush-collapse1">
+                                        Темы раздела
+                                    </button>
+                                </h6>
+                                <div id="flush-collapse1" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them1">Введение в написание программ</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them2">Переменные и типы данных</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them3">Консольный ввод и вывод</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them4">Арифметические операции с числами</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them5">Поразрядные операции с числами</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them6">Условные выражения</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them7">Условная конструкция if</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them8">Циклы</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them9">Функции</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them10">Параметры функции</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them11">Оператор return и возвращение результата из функции</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them12">Функция как тип, параметр и результат другой функции</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them13">Лямбда-выражения</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them14">Преобразование типов</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them15">Область видимости переменных</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them16">Замыкания</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="#them17">Декораторы</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Глава 3. Объектно-ориентированное программирование</h5>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse2" aria-expanded="false"
+                                        aria-controls="flush-collapse2">
+                                        Темы раздела
+                                    </button>
+                                </h6>
+                                <div id="flush-collapse2" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem2.html#them1">Классы и объекты</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem2.html#them2">Инкапсуляция, атрибуты и свойства</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem2.html#them3">Наследование</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem2.html#them4">Переопределение функционала базового класса</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem2.html#them5">Атрибуты классов и статические методы</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem2.html#them6">Класс object. Строковое представление объекта</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem2.html#them7">Перегрузка операторов</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem2.html#them8">Абстрактные классы и методы</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Глава 4. Обработка ошибок и исключений</h5>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse3" aria-expanded="false"
+                                        aria-controls="flush-collapse3">
+                                        Темы раздела
+                                    </button>
+                                </h6>
+                                <div id="flush-collapse3" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem3.html#them1">Конструкция try...except...finally</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem3.html#them2">except и обработка разных типов исключений</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem3.html#them3">Генерация исключений и создание своих типов исключений</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Глава 5. Списки, кортежи и словари</h5>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse4" aria-expanded="false"
+                                        aria-controls="flush-collapse4">
+                                        Темы раздела
+                                    </button>
+                                </h6>
+                                <div id="flush-collapse4" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem4.html#them1">Списки</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem4.html#them2">Кортежи</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem4.html#them3">Диапазоны</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem4.html#them4">Словари</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem4.html#them5">Множества</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem4.html#them6">List comprehension</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem4.html#them7">Упаковка и распаковка</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem4.html#them8">Упаковка и распаковка в параметрах функций</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Глава 6. Модули</h5>
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse5" aria-expanded="false"
+                                        aria-controls="flush-collapse5">
+                                        Темы раздела
+                                    </button>
+                                </h6>
+                                <div id="flush-collapse5" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem5.html#them1">Определение и подключение модулей</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem5.html#them2">Генерация байткода модулей</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem5.html#them3">Модуль random</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem5.html#them4">Модуль secrets</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem5.html#them5">Математические функции и модуль math</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem5.html#them6">Модуль locale</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem5.html#them7">Модуль decimal</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem5.html#them8">Модуль dataclasses. Data-классы</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem5.html#them9">Модуль timeit</a></li>
+                                            <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="pageThem5.html#them10">Установка пакетов, pip и виртуальная среда</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <h3>Основы Python</h3>
+                <div id="them1">
+                    <h4>Введение в написание программ</h4>
+                    <p>Программа на языке Python состоит из набора инструкций. Каждая инструкция помещается на новую строку. Например:</p>
+                    <img src="" alt="">
+                    <p>Большую роль в Python играют отступы. Неправильно поставленный отступ фактически является ошибкой. Например, в следующем случае мы получим ошибку, хотя код будет практически аналогичен приведенному выше:</p>
+                    <img src="" alt="">
+                    <p>Поэтому стоит помещать новые инструкции сначала строки. В этом одно из важных отличий пайтона от других языков программирования, как C# или Java.</p>
+                    <p>Однако стоит учитывать, что некоторые конструкции языка могут состоять из нескольких строк. Например, условная конструкция if:</p>
+                    <img src="" alt="">
+                    <p>В данном случае если 1 меньше 2, то выводится строка "Hello". И здесь уже должен быть отступ, так как инструкция print("Hello") используется не сама по себе, а как часть условной конструкции if. Причем отступ, согласно руководству по оформлению кода, желательно делать из такого количество пробелов, которое кратно 4 (то есть 4, 8, 16 и т.д.) Хотя если отступов будет не 4, а 5, то программа также будет работать.</p>
+                    <p>Таких конструкций не так много, поэтому особой путаницы по поводу где надо, а где не надо ставить пробелы, не должно возникнуть.</p>
+                    <p>Регистрозависимость</p>
+                    <p>Python - регистрозависимый язык, поэтому выражения print и Print или PRINT представляют разные выражения. И если вместо метода print для вывода на консоль мы попробуем использовать метод Print:</p>
+                    <img src="" alt="">
+                    <p>Комментарии</p>
+                    <p>Для отметки, что делает тот или иной участок кода, применяются комментарии. При трансляции и выполнении программы интерпретатор игнорирует комментарии, поэтому они не оказывают никакого влияния на работу программы. Комментарии в Python бывают блочные и строчные.</p>
+                    <p>Строчные коментарии предваряются знаком решетки - #. Они могут располагаться на отдельной строке:</p>
+                    <img src="" alt="">
+                    <p>Любой набор символов после знака # представляет комментарий. То есть в примере выше первые две строки кода являются комментариями.</p>
+                    <p>Также они могут располагаться на той же строке, что и инструкции языка, после выполняемых инструкций:</p>
+                    <img src="" alt="">
+                    <p>В блочных коментариях до и после текста комментария ставятся три одинарные кавычки: '''текст комментария'''. Например:</p>
+                    <img src="" alt="">
+                    <p>Основные функции</p>
+                    <p>Python предоставляет ряд встроенных функций. Некоторые из них используются очень часто, особенно на начальных этапах изучения языка, поэтому рассмотрим их.</p>
+                    <p>Основной функцией для вывода информации на консоль является функция print(). В качестве аргумента в эту функцию передается строка, которую мы хотим вывести:</p>
+                    <img src="" alt="">
+                    <p>Если же нам необходимо вывести несколько значений на консоль, то мы можем передать их в функцию print через запятую:</p>
+                    <img src="" alt="">
+                    <p>В итоге все переданные значения склеятся через пробелы в одну строку:</p>
+                    <img src="" alt="">
+                    <p>Если функция print отвечает за вывод, то функция input отвечает за ввод информации. В качестве необязательного параметра эта функция принимает приглашение к вводу и возвращает введенную строку, которую мы можем сохранить в переменную:</p>
+                    <img src="" alt="">
+                    <p>Консольный вывод:</p>
+                    <img src="" alt="">
+                </div>
+                <div id="them2">
+                    <h4>Переменные и типы данных</h4>
+                    <p>Переменные</p>
+                    <p>Переменные предназначены для хранения данных. Название переменной в Python должно начинаться с алфавитного символа или со знака подчеркивания и может содержать алфавитно-цифровые символы и знак подчеркивания. И кроме того, название переменной не должно совпадать с названием ключевых слов языка Python. Ключевых слов не так много, их легко запомнить:</p>
+                    <img src="" alt="">
+                    <p>Например, создадим переменную:</p>
+                    <img src="" alt="">
+                    <p>Здесь определена переменная name, которая хранит строку "Tom".</p>
+                    <p>В пайтоне применяется два типа наименования переменных: camel case и underscore notation.</p>
+                    <p>Camel case подразумевает, что каждое новое подслово в наименовании переменной начинается с большой буквы. Например:</p>
+                    <img src="" alt="">
+                    <p>Underscore notation подразумевает, что подслова в наименовании переменной разделяются знаком подчеркивания. Например:</p>
+                    <img src="" alt="">
+                    <p>И также надо учитывать регистрозависимость, поэтому переменные name и Name будут представлять разные объекты.</p>
+                    <img src="" alt="">
+                    <p>Определив переменную, мы можем использовать в программе. Например, попытаться вывести ее содержимое на консоль с помощью встроенной функции print:</p>
+                    <img src="" alt="">
+                    <p>Например, определение и применение переменной в среде PyCharm:</p>
+                    <p>Переменные в Python</p>
+                    <p>Отличительной особенностью переменной является то, что мы можем менять ее значение в течение работы программы:</p>
+                    <img src="" alt="">
+                    <p>Типы данных</p>
+                    <p>Переменная хранит данные одного из типов данных. В Python существует множество различных типов данных. В данном случае рассмотрим только самые базовые типы: bool, int, float, complex и str.</p>
+                    <p>Логические значения</p>
+                    <p>Тип bool представляет два логических значения: True (верно, истина) или False (неверно, ложь). Значение True служит для того, чтобы показать, что что-то истинно. Тогда как значение False, наоборот, показывает, что что-то ложно. Пример переменных данного типа:</p>
+                    <img src="" alt="">
+                    <p>Целые числа</p>
+                    <p>Тип int представляет целое число, например, 1, 4, 8, 50. Пример</p>
+                    <img src="" alt="">
+                    <p>По умолчанию стандартные числа расцениваются как числа в десятичной системе. Но Python также поддерживает числа в двоичной, восьмеричной и шестнадцатеричной системах.</p>
+                    <p>Для указания, что число представляет двоичную систему, перед числом ставится префикс 0b:</p>
+                    <img src="" alt="">
+                    <p>Для указания, что число представляет восьмеричную систему, перед числом ставится префикс 0o:</p>
+                    <img src="" alt="">
+                    <p>Для указания, что число представляет шестнадцатеричную систему, перед числом ставится префикс 0x:</p>
+                    <img src="" alt="">
+                    <p>Стоит отметить, что в какой-бы системе мы не передали число в функцию print для вывода на консоль, оно по умолчанию будет выводиться в десятичной системе.</p>
+                    <p>Дробные числа</p>
+                    <p>Тип float представляет число с плавающей точкой, например, 1.2 или 34.76. В качесте разделителя целой и дробной частей используется точка.</p>
+                    <img src="" alt="">
+                    <p>Число с плавающей точкой можно определять в экспоненциальной записи:</p>
+                    <img src="" alt="">
+                    <p>Число float может иметь только 18 значимых символов. Так, в данном случае используются только два символа - 3.9. И если число слишком велико или слишком мало, то мы можем записывать число в подобной нотации, используя экспоненту. Число после экспоненты указывает степень числа 10, на которое надо умножить основное число - 3.9.</p>
+                    <p>Комплексные числа</p>
+                    <p>Тип complex представляет комплексные числа в формате вещественная_часть+мнимая_частьj - после мнимой части указывается суффикс j</p>
+                    <img src="" alt="">
+                    <p>Строки</p>
+                    <p>Тип str представляет строки. Строка представляет последовательность символов, заключенную в одинарные или двойные кавычки, например "hello" и 'hello'. В Python 3.x строки представляют набор символов в кодировке Unicode</p>
+                    <img src="" alt="">
+                    <p>При этом, если строка имеет много символов, ее можно разбить на части и эти части разместить на разных строках кода. В этом случае вся строка заключается в круглые скобки, а ее отдельные части - в кавычки:</p>
+                    <img src="" alt="">
+                    <p>Если же мы хотим определить многострочный текст, то такой текст заключается в тройные двойные или одинарные кавычки:</p>
+                    <img src="" alt="">
+                    <p>При использовани тройных одинарных кавычек не стоит путать их с комментариями: если текст в тройных одинарных кавычках присваивается переменной, то это строка, а не комментарий.</p>
+                    <p>Управляющие последовательности в строке</p>
+                    <p>Строка может содержать ряд специальных символов - управляющих последовательностей. Некоторые из них:</p>
+                    <p>\\: позволяет добавить внутрь строки слеш</p>
+                    <p>\': позволяет добавить внутрь строки одинарную кавычку</p>
+                    <p>\": позволяет добавить внутрь строки двойную кавычку</p>
+                    <p>\n: осуществляет переход на новую строку</p>
+                    <p>\t: добавляет табуляцию (4 отступа)</p>
+                    <p>Применим несколько последовательностей:</p>
+                    <img src="" alt="">
+                    <p>Консольный вывод программы:</p>
+                    <img src="" alt="">
+                    <p>Хотя подобные последовательности могут нам помочь в некоторых делах, например, поместить в строку кавычку, сделать табуляцию, перенос на другую строку. Но они также могут и мешать. Например:</p>
+                    <img src="" alt="">
+                    <p>Здесь переменная path содержит некоторый путь к файлу. Однако внутри строки встречаются символы "\n", которые будут интерпретированы как управляющая последовательность. Так, мы получим следующий консольный вывод:</p>
+                    <img src="" alt="">
+                    <p>Чтобы избежать подобной ситуации, перед строкой ставится символ r</p>
+                    <img src="" alt="">
+                    <p>Вставка значений в строку</p>
+                    <p>Python позволяет встравивать в строку значения других переменных. Для этого внутри строки переменные размещаются в фигурных скобках {}, а перед всей строкой ставится символ f:</p>
+                    <img src="" alt="">
+                    <p>В данном случае на место {userName} будет вставляться значение переменной userName. Аналогично на вместо {userAge} будет вставляться значение переменной userAge.</p>
+                    <p>Динамическая типизация</p>
+                    <p>Python является языком с динамической типизацией. А это значит, что переменная не привязана жестко к определенному типу.</p>
+                    <p>Тип переменной определяется исходя из значения, которое ей присвоено. Так, при присвоении строки в двойных или одинарных кавычках переменная имеет тип str. При присвоении целого числа Python автоматически определяет тип переменной как int. Чтобы определить переменную как объект float, ей присваивается дробное число, в котором разделителем целой и дробной части является точка.</p>
+                    <p>При этом в процессе работы программы мы можем изменить тип переменной, присвоив ей значение другого типа:</p>
+                    <img src="" alt="">
+                    <p>С помощью встроенной функции type() динамически можно узнать текущий тип переменной:</p>
+                    <img src="" alt="">
+                </div>
+                <div id="them3">
+                    <h4>Консольный ввод и вывод</h4>
+                    <p>Вывод на консоль</p>
+                    <p>Для вывода информации на консоль предназначена встроенная функция print(). При вызове этой функции ей в скобках передается выводимое значение:</p>
+                    <img src="" alt="">
+                    <p>Данный код выведет нам на консоль строку "Hello METANIT.COM".</p>
+                    <p></p>
+                    <p>Отличительной особенностью этой функции является то, что по умолчанию она выводит значение на отдельной строке. Например:</p>
+                    <img src="" alt="">
+                    <p>Здесь три вызова функции print() выводят некоторое сообщение. Причем при выводе на консоль каждое сообщение будет размещаться на отдельной строке:</p>
+                    <img src="" alt="">
+                    <p>Такое поведение не всегда удобно. Например, мы хотим, чтобы все значения выводились на одной строке. Для этого нам надо настроить поведение функции с помощью параметра end. Этот параметр задает символы, которые добавляются в конце к выводимой строке и . При применении параметра end вызов функции print() выглядит следующим образом:</p>
+                    <img src="" alt="">
+                    <p>По умолчанию end равен символу "\n", который задает перевод на следующую строку. Собственно поэтому функция print по умолчанию выводит передаваемое ей значение на отдельной строке.</p>
+                    <p></p>
+                    <p>Теперь определим, чтобы функция не делала перевод на следующую строку, а выводила значение на той же строке:</p>
+                    <img src="" alt="">
+                    <p>То есть теперь выводимые значения будут разделяться пробелом:</p>
+                    <img src="" alt="">
+                    <p>Причем это может быть не один символ, а набор символов:</p>
+                    <img src="" alt="">
+                    <p>В данном случае выводимые сообщения будут отделяться символами " and ":</p>
+                    <img src="" alt="">
+                    <p>Консольный ввод</p>
+                    <p>Наряду с выводом на консоль мы можем получать ввод пользователя с консоли, получать вводимые данные. Для этого в Python определена функция input(). В эту функцию передается приглашение к вводу. А результат ввода мы можем сохранить в переменную. Например, определим код для ввода пользователем имени:</p>
+                    <img src="" alt="">
+                    <p>В данном случае в функцию input() передается приглашение к вводу в виде строки "Введите свое имя: ". Результат функции - результат ввода пользователя передается в переменную name. Затем мы можем вывести значение этой переменной на консоль с помощью функции print(). Пример работы кода:</p>
+                    <img src="" alt="">
+                    <p>Еще пример с вводом нескольких значений:</p>
+                    <img src="" alt="">
+                    <p>Пример работы программы:</p>
+                    <img src="" alt="">
+                    <p>Стоит учитывать, что все введенные значения рассматриваются как значения типа str, то есть строки. И даже если мы вводим число, как в втором случае в коде выше, то Python все равно будет рассматривать введенное значение как строку, а не как число.</p>
+                </div>
+                <div id="them4">
+                    <h4>Арифметические операции с числами</h4>
+                    <p>Python поддерживает все распространенные арифметические операции:</p>
+                    <ul class="list-group">
+                        <li class="list-group-item"><p>Сложение двух чисел:</p></li>
+                        <li class="list-group-item"><p>Вычитание двух чисел:</p></li>
+                        <li class="list-group-item"><p>Умножение двух чисел:</p></li>
+                        <li class="list-group-item"><p>Деление двух чисел:</p></li>
+                        <li class="list-group-item"><p>Целочисленное деление двух чисел:</p></li>
+                        <li class="list-group-item"><p>Возведение в степень:</p></li>
+                        <li class="list-group-item"><p>Получение остатка от деления:</p></li>
+                    </ul>
+                    <p>При последовательном использовании нескольких арифметических операций их выполнение производится в соответствии с их приоритетом. В начале выполняются операции с большим приоритетом.</p>
+                    <p>Пусть у нас выполняется следующее выражение:</p>
+                    <img src="" alt="">
+                    <p>Здесь начале выполняется возведение в степень (5 ** 2) как операция с большим приоритетом, далее результат умножается на 4 (25 * 4), затем происходит сложение (3 + 100) и далее опять идет сложение (103 + 7).</p>
+                    <p></p>
+                    <p>Чтобы переопределить порядок операций, можно использовать скобки:</p>
+                    <img src="" alt="">
+                    <p>Следует отметить, что в арифметических операциях могут принимать участие как целые, так и дробные числа. Если в одной операции участвует целое число (int) и число с плавающей точкой (float), то целое число приводится к типу float.</p>
+                    <p></p>
+                    <p>Арифметические операции с присвоением</p>
+                    <p>Ряд специальных операций позволяют использовать присвоить результат операции первому операнду:</p>
+                    <ul class="list-group">
+                        <li class="list-group-item"><p>Присвоение результата сложения</p></li>
+                        <li class="list-group-item"><p>Присвоение результата вычитания</p></li>
+                        <li class="list-group-item"><p>Присвоение результата умножения</p></li>
+                        <li class="list-group-item"><p>Присвоение результата от деления</p></li>
+                        <li class="list-group-item"><p>Присвоение результата целочисленного деления</p></li>
+                        <li class="list-group-item"><p>Присвоение степени числа</p></li>
+                        <li class="list-group-item"><p>Присвоение остатка от деления</p></li>
+                    </ul>
+                    <p>Примеры операций:</p>
+                    <img src="" alt="">
+                    <p>Округление и функция round</p>
+                    <p>При операциях с числами типа float надо учитывать, что результат операций с ними может быть не совсем точным. Например:</p>
+                    <img src="" alt="">
+                    <p>В данном случае мы ожидаем получить число 0.40002, однако в конце через ряд нулей появляется еще какая-то четверка. Или еще одно выражение:</p>
+                    <img src="" alt="">
+                    <p>В случае выше для округления результата мы можем использовать встроенную функцию round():</p>
+                    <img src="" alt="">
+                    <p>В функцию round() передается число, которое надо округлить. Если в функцию передается одно число, как в примере выше, то оно округляется до целого.</p>
+                    <p></p>
+                    <p>Функция round() также может принимать второе число, которое указывает, сколько знаков после запятой должно содержать получаемое число:</p>
+                    <img src="" alt="">
+                    <p>В данном случае число third_number округляется до 4 знаков после запятой.</p>
+                    <p></p>
+                    <p>Если в функцию передается только одно значение - только округляемое число, оно округляется то ближайшего целого</p>
+                    <p></p>
+                    <p>Примеры округлений:</p>
+                    <img src="" alt="">
+                    <p>Однако если округляемая часть равна одинаково удалена от двух целых чисел, то округление идет к ближайшему четному:</p>
+                    <img src="" alt="">
+                    <p>Округление производится до ближайшего кратного 10 в степени минус округляемая часть:</p>
+                    <img src="" alt="">
+                    <p>Однако следует учитывать, что функция round() не идеальный инструмент. Например, выше при округление до целых чисел применяется правило, согласно которому, если округляемая часть одинаково удалена от двух значений, то округление производится до ближайшего четного значения. В Python в связи с тем, что десятичная часть числа не может быть точно представлена в виде числа float, то это может приводить к некоторым не совсем ожидаемым результатам. Например:</p>
+                    <img src="" alt="">
+                </div>
+                <div id="them5">
+                    <h4>Поразрядные операции с числами</h4>
+                    <p>Особый класс операций представляют поразрядные операции. Они выполняются над отдельными разрядами чисел типа int. Но чтобы понять природу поразрядных операций, надо понимать что вообще представляет число в двоичном представление.</p>
+                    <p>Двоичное представление чисел</p>
+                    <p>При двоичной системе каждый разряд числа может иметь только два значения - 0 и 1. Например, 0 в десятичной системе также будет равен 0 в двоичной системе, а 1 в десятичной системе будет соответствовать 1 в двоичной системе. Следующее число в десятичной системе - 2 в двоичной системе будет соответствовать 10. То есть, когда мы к 1 прибавляем 1, то результатом будет 10. И так далее.</p>
+                    <p>Например, 5 в двоичном представлении 101 и имеет три разряда. Для вывода десятичного числа в двоичной системе можно применять спецификатор 0b:</p>
+                    <img src="" alt=""></p>
+                    <p>Без указания спецификатора функция print() выводит число в десятичной системе.</p>
+                    <p>При этом Python позволяет сразу определять число в двоичной форме. Для этого число в двоичной форме указывается после префикса 0b:</p>
+                    <img src="" alt=""></p>
+                    <p>Еще несколько примеров сопоставления между двоичной и десятичной системами:</p>
+                    <img src="" alt=""></p>
+                    <p>Логические операции</p>
+                    <p>Логические операции выполняются над отдельными разрядами числа. В Python есть следующие логические операции:</p>
+                    <p>&(логическое умножение)</p>
+                    <p>Умножение производится поразрядно, и если у обоих операндов значения разрядов равно 1, то операция возвращает 1, иначе возвращается число 0. Например:</p>
+                    <img src="" alt=""></p>
+                    <p>В первом случае у нас два числа 2 и 5. 2 в двоичном виде представляет число 010, а 5 - 101. Поразрядно умножим числа (0*1, 1*0, 0*1) и в итоге получим 000.</p>
+                    <p>Во втором случае у нас вместо двойки число 4, у которого в первом разряде 1, так же как и у числа 5, поэтому в итоге получим (1*1, 0*0, 0 *1) = 100, то есть число 4 в десятичном формате.</p>
+                    <p>| (логическое сложение)</p>
+                    <p>Похоже на логическое умножение, операция также производится по двоичным разрядам, но теперь возвращается единица, если хотя бы у одного числа в данном разряде имеется единица. Например:</p>
+                    <img src="" alt=""></p>
+                    <p>^ (логическое исключающее ИЛИ)</p>
+                    <p>Если значения текущего разряда у обоих чисел разные, то возвращается 1, иначе возвращается 0. Также эту операцию называют XOR. Например:</p>
+                    <img src="" alt=""></p>
+                    <p>Здесь число 9 в двоичной форме равно 1001. Число 5 равно 0101. Операция XOR дает следующий результат: 1^0, 0^1, 0^0, 1^1. Здесь мы видим, что первые два разряда чисел содержат разные значения, поэтому первые два разряда получат значение 1. А последние два разряда чисел содержат одинаковые значения, поэтому последние два разряда получат значение 0. Таким образом, мы получаем число 1100 или 12 в десятичной системе.</p>
+                    <p>нередко данную операцию применяют для простого шифрования:</p>
+                    <img src="" alt=""></p>
+                    <p>Также можно применять эту операцию для обмена значений чисел:</p>
+                    <img src="" alt=""></p>
+                    <p>~(инверсия)</p>
+                    <p>Инвертирует число. Выражение ~x фактически аналогично -(x+1). Например:</p>
+                    <img src="" alt=""></p>
+                    <p>Операции сдвига</p>
+                    <p>Операции сдвига также производятся над разрядами чисел. Сдвиг может происходить вправо и влево.</p>
+                    <p><code>x&lt;&lt;y</code> - сдвигает число x влево на y разрядов. Например, <code>4&lt;&lt;1</code> сдвигает число 4 (которое в двоичном представлении 100) на один разряд влево, то есть в итоге получается 1000 или число 8 в десятичном представлении.</p>
+                    <p>x>>y - сдвигает число x вправо на y разрядов. Например, 16>>1 сдвигает число 16 (которое в двоичном представлении 10000) на один разряд вправо, то есть в итоге получается 1000 или число 8 в десятичном представлении.</p>
+                    <p>Таким образом, если исходное число, которое надо сдвинуть в ту или другую строну, делится на два, то фактически получается умножение или деление на два. Поэтому подобную операцию можно использовать вместо непосредственного умножения или деления на два. Например:</p>
+                    <img src="" alt=""></p>
+                    <p>При этом числа, которые участвую в операциях, необязательно должны быть кратны 2::</p>
+                    <img src="" alt="">
+                </div>
+                <div id="them6">
+                    <h4></h4>
+                </div>
+                <div id="them7">
+                    <h4></h4>
+                </div>
+                <div id="them8">
+                    <h4></h4>
+                </div>
+                <div id="them9">
+                    <h4></h4>
+                </div>
+                <div id="them10">
+                    <h4></h4>
+                </div>
+                <div id="them11">
+                    <h4></h4>
+                </div>
+                <div id="them12">
+                    <h4></h4>
+                </div>
+                <div id="them13">
+                    <h4></h4>
+                </div>
+                <div id="them14">
+                    <h4></h4>
+                </div>
+                <div id="them15">
+                    <h4></h4>
+                </div>
+                <div id="them16">
+                    <h4></h4>
+                </div>
+                <div id="them17">
+                    <h4></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
