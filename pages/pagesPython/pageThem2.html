@@ -905,15 +905,473 @@
                 </div>
                 <div id="them5">
                     <h4>Атрибуты классов и статические методы</h4>
+                    <p>Атрибуты класса</p>
+                    <p>Кроме атрибутов объектов в классе можно определять атрибуты классов. Подобные атрибуты определяются в виде переменных уровня класса. Например:</p>
+                    <pre><code>
+                        <p>class Person:</p>
+                        <p>     type = "Person"</p>
+                        <p>     description = "Describes a person"</p>
+                        <p> </p>
+                        <p> </p>
+                        <p>print(Person.type)          # Person</p>
+                        <p>print(Person.description)   # Describes a person</p>
+                        <p> </p>
+                        <p>Person.type = "Class Person"</p>
+                        <p>print(Person.type)          # Class Person</p>
+                    </code></pre>
+                    <p>Здесь в классе Person определено два атрибута: type, который хранит имя класса, и description, который хранит описание класса.</p>
+                    <p>Для обращения к атрибутам класса мы можем использовать имя класса, например: Person.type, и, как и атрибуты объекта, мы можем получать и изменять их значения.</p>
+                    <p>Подобные атрибуты являются общими для всех объектов класса:</p>
+                    <pre><code>
+                        <p>class Person:</p>
+                        <p>     type = "Person"</p>
+                        <p>     def __init__(self, name):</p>
+                        <p>         self.name = name</p>
+                        <p> </p>
+                        <p> </p>
+                        <p>tom = Person("Tom")</p>
+                        <p>bob = Person("Bob")</p>
+                        <p>print(tom.type)     # Person</p>
+                        <p>print(bob.type)     # Person</p>
+                        <p> </p>
+                        <p># изменим атрибут класса</p>
+                        <p>Person.type = "Class Person"</p>
+                        <p>print(tom.type)     # Class Person</p>
+                        <p>print(bob.type)     # Class Person</p>
+                    </code></pre>
+                    <p>Атрибуты класса могут применяться для таких ситуаций, когда нам надо определить некоторые общие данные для всех объектов. Например:</p>
+                    <pre><code>
+                        <p>class Person:</p>
+                        <p>    default_name = "Undefined"</p>
+                        <p> </p>
+                        <p>    def __init__(self, name):</p>
+                        <p>        if name:</p>
+                        <p>            self.name = name</p>
+                        <p>        else:</p>
+                        <p>            self.name = Person.default_name</p>
+                        <p> </p>
+                        <p> </p>
+                        <p>tom = Person("Tom")</p>
+                        <p>bob = Person("")</p>
+                        <p>print(tom.name)  # Tom</p>
+                        <p>print(bob.name)  # Undefined</p>
+                    </code></pre>
+                    <p>В данном случае атрибут default_name хранит имя по умолчанию. И если в конструктор передана пустая строка для имени, то атрибуту name передается значение атрибута класса default_name. Для обращения к атрибуту класса внутри методов можно применять имя класса</p>
+                    <pre><code>
+                        <p>self.name = Person.default_name</p>
+                    </code></pre>
+                    <p>Атрибут класса</p>
+                    <p>Возможна ситуация, когда атрибут класса и атрибут объекта совпадает по имени. Если в коде для атрибута объекта не задано значение, то для него может применяться значение атрибута класса:</p>
+                    <pre><code>
+                        <p>class Person:</p>
+                        <p>    name = "Undefined"</p>
+                        <p> </p>
+                        <p>    def print_name(self):</p>
+                        <p>        print(self.name)</p>
+                        <p> </p>
+                        <p> </p>
+                        <p>tom = Person()</p>
+                        <p>bob = Person()</p>
+                        <p>tom.print_name()    # Undefined</p>
+                        <p>bob.print_name()    # Undefined</p>
+                        <p> </p>
+                        <p>bob.name = "Bob"</p>
+                        <p>bob.print_name()    # Bob</p>
+                        <p>tom.print_name()    # Undefined</p>
+                    </code></pre>
+                    <p>Здесь метод print_name использует атрибут объект name, однако нигде в коде этот атрибут не устанавливается. Зато на уровне класса задан атрибут name. Поэтому при первом обращении к методу print_name, в нем будет использоваться значение атрибута класса:</p>
+                    <pre><code>
+                        <p>tom = Person()</p>
+                        <p>bob = Person()</p>
+                        <p>tom.print_name()    # Undefined</p>
+                        <p>bob.print_name()    # Undefined</p>
+                    </code></pre>
+                    <p>Однако далее мы можем поменять установить атрибут объекта:</p>
+                    <pre><code>
+                        <p>bob.name = "Bob"</p>
+                        <p>bob.print_name()    # Bob</p>
+                        <p>tom.print_name()    # Undefined</p>
+                    </code></pre>
+                    <p>Причем второй объект - tom продолжит использовать атрибут класса. И если мы изменим атрибут класса, соответственно значение tom.name тоже изменится:</p>
+                    <pre><code>
+                        <p>tom = Person()</p>
+                        <p>bob = Person()</p>
+                        <p>tom.print_name()    # Undefined</p>
+                        <p>bob.print_name()    # Undefined</p>
+                        <p> </p>
+                        <p>Person.name = "Some Person"     # меняем значение атрибута класса</p>
+                        <p>bob.name = "Bob"                # устанавливаем атрибут объекта</p>
+                        <p>bob.print_name()    # Bob</p>
+                        <p>tom.print_name()    # Some Person</p>
+                    </code></pre>
+                    <p>Статические методы</p>
+                    <p>Кроме обычных методов класс может определять статические методы. Такие методы предваряются аннотацией @staticmethod и относятся в целом к классу. Статические методы обычно определяют поведение, которое не зависит от конкретного объекта:</p>
+                    <pre><code>
+                        <p>class Person:</p>
+                        <p>    __type = "Person"</p>
+                        <p> </p>
+                        <p>    @staticmethod</p>
+                        <p>    def print_type():</p>
+                        <p>        print(Person.__type)</p>
+                        <p> </p>
+                        <p> </p>
+                        <p>Person.print_type()     # Person - обращение к статическому методу через имя класса</p>
+                        <p> </p>
+                        <p>tom = Person()</p>
+                        <p>tom.print_type()     # Person - обращение к статическому методу через имя объекта</p>
+                    </code></pre>
+                    <p>В данном случае в классе Person определен атрибут класса __type, который хранит значение, общее для всего класса - название класса. Причем поскольку название атрибута предваряется двумя подчеркиваниями, то данный атрибут будет приватным, что защитит от недопустимого изменения.</p>
+                    <p>Также в классе Person определен статический метод print_type, который выводит на консоль значение атрибута __type. Действие этого метода не зависит от конкретного объекта и относится в целом ко всему классу - вне зависимости от объекта на консоль будет выводится одно и то же значение атрибута __type. Поэтому такой метод можно сделать статическим.</p>
+                    <p><!--  --></p>
+                    <p>Начиная с 3-й версии в языке программирования Python все классы неявно имеют один общий суперкласс - object и все классы по умолчанию наследуют его методы.</p>
+                    <p>Одним из наиболее используемых методов класса object является метод __str__(). Когда необходимо получить строковое представление объекта или вывести объект в виде строки, то Python как раз вызывает этот метод. И при определении класса хорошей практикой считается переопределение этого метода.</p>
                 </div>
                 <div id="them6">
                     <h4>Класс object. Строковое представление объекта</h4>
+                    <p>К примеру, возьмем класс Person и выведем его строковое представление:</p>
+                    <pre><code>
+                        <p>class Person:</p>
+                        <p>    def __init__(self, name, age):</p>
+                        <p>        self.name = name  # устанавливаем имя</p>
+                        <p>        self.age = age  # устанавливаем возраст</p>
+                        <p> </p>
+                        <p>    def display_info(self):</p>
+                        <p>        print(f"Name: {self.name}  Age: {self.age}")</p>
+                        <p> </p>
+                        <p> </p>
+                        <p>tom = Person("Tom", 23)</p>
+                        <p>print(tom)</p>
+                    </code></pre>
+                    <p>При запуске программа выведет что-то наподобие следующего:</p>
+                    <pre><code>
+                        <p><__main__.Person object at 0x10a63dc00></p>
+                    </code></pre>
+                    <p>Это не очень информативная информация об объекте. Мы, конечно, можем выйти из положения, определив в классе Person дополнительный метод, который выводит данные объекта - в примере выше это метод display_info.</p>
+                    <p>Но есть и другой выход - определим в классе Person метод __str__() (по два подчеркивания с каждой стороны):</p>
+                    <pre><code>
+                        <p>class Person:</p>
+                        <p>    def __init__(self, name, age):</p>
+                        <p>        self.name = name  # устанавливаем имя</p>
+                        <p>        self.age = age  # устанавливаем возраст</p>
+                        <p> </p>
+                        <p>    def display_info(self):</p>
+                        <p>        print(self)</p>
+                        <p>        # print(self.__str__())     # или так</p>
+                        <p> </p>
+                        <p>    def __str__(self):</p>
+                        <p>        return f"Name: {self.name}  Age: {self.age}"</p>
+                        <p> </p>
+                        <p> </p>
+                        <p>tom = Person("Tom", 23)</p>
+                        <p>print(tom)      # Name: Tom  Age: 23</p>
+                        <p>tom.display_info()  # Name: Tom  Age: 23</p>
+                        <p>Метод __str__ должен возвращать строку. И в данном случае мы возвращаем базовую информацию о человеке. Если нам потребуется использовать эту информацию в других методах класса, то мы можем использовать выражение self.__str__()</p>
+                        <p>И теперь консольный вывод будет другим:</p>
+                        <p>Name: Tom  Age: 23</p>
+                        <p>Name: Tom  Age: 23</p>
+                    </code></pre>
                 </div>
                 <div id="them7">
                     <h4>Перегрузка операторов</h4>
+                    <p>Чтобы определить оператор для некоторого класса, данный класс должен реализовать соответствующую функцию. Так, для определения оператора сложения применяется функция __add__(), поэтому внутри класса нам надо определить данную функцию. Например:</p>
+                    <pre><code>
+                        <p>class Counter:</p>
+                        <p>    def __init__(self, value):</p>
+                        <p>        self.value = value</p>
+                        <p>    # переопределение оператора сложения</p>
+                        <p>    def __add__(self, other):</p>
+                        <p>        return Counter(self.value + other.value)</p>
+                        <p>     </p>
+                        <p>counter1 = Counter(5)</p>
+                        <p>counter2 = Counter(15)</p>
+                        <p>counter3 = counter1 + counter2</p>
+                        <p>print(counter3.value)       # 20</p>
+                    </code></pre>
+                    <p>Здесь определен класс Counter, который имеет атрибут value - условное некоторое число. С помощью функции __add__ определяем для типа Counter оператор сложения. Допустим, мы хотим, чтобы один объект Counter можно было сложить с другим объектом Counter. В этом случае второй параметр функции будет представлять другой объект Counter:</p>
+                    <pre><code>
+                        <p>def __add__(self, other):</p>
+                        <p>    return Counter(self.value + other.value)</p>
+                    </code></pre>
+                    <p>В результате возвращаем новый объект Counter, в который помещается сумма атрибутов value обоих объектов.</p>
+                    <p>После этого мы сможем складывать два объекта Counter, и результатом сложения будет новый объект Counter.</p>
+                    <p>Причем в данном случае реализован не единственно возможный вариант оператора сложения. Так, в примере выше второй параметр функции представлял другой объект Counter. Но в реалньости это может быть любой тип. Например, что, если мы хотим складывать Counter не с другим объектом Counter, а с числом. Тогда мы могли определить следующий оператор:</p>
+                    <pre><code>
+                        <p>class Counter:</p>
+                        <p>    def __init__(self, value):</p>
+                        <p>        self.value = value</p>
+                        <p>         </p>
+                        <p>    def __add__(self, other):</p>
+                        <p>        return Counter(self.value + other)</p>
+                        <p>     </p>
+                        <p>counter1 = Counter(5)</p>
+                        <p>counter3 = counter1 + 6</p>
+                        <p>print(counter3.value)       # 11</p>
+                    </code></pre>
+                    <p>Здесь оператор сложения по прежнему возвращает объект Counter, только теперь второй параметр представляет обычное число.</p>
+                    <p>Возвращаемый тип ряда операторов также жестко не определен. Например, мы могли бы возвращить также обычное число:</p>
+                    <pre><code>
+                        <p>class Counter:</p>
+                        <p>    def __init__(self, value):</p>
+                        <p>        self.value = value</p>
+                        <p>         </p>
+                        <p>    def __add__(self, other):</p>
+                        <p>        return self.value + other</p>
+                        <p>     </p>
+                        <p>counter1 = Counter(5)</p>
+                        <p>result = counter1 + 7</p>
+                        <p>print(result)       # 12</p>
+                    </code></pre>
+                    <p>Рассмотрим еще ряд примеров определения операторов.</p>
+                    <p>Истинность объекта</p>
+                    <p>Определение функции __bool__ позволяет установить истинность объекта или фактически преобразовать объект к значениям True/False. Например:</p>
+                    <pre><code>
+                        <p>class Counter:</p>
+                        <p>    def __init__(self, value):</p>
+                        <p>        self.value = value</p>
+                        <p>    def __bool__(self):</p>
+                        <p>        return self.value > 0</p>
+                        <p>     </p>
+                        <p>def test(counter):</p>
+                        <p>    if counter: print("Counter = True")</p>
+                        <p>    else: print("Counter = False")</p>
+                        <p>     </p>
+                        <p>counter1 = Counter(3)</p>
+                        <p>test(counter1)              # Counter = True</p>
+                        <p> </p>
+                        <p>counter2 = Counter(-3)</p>
+                        <p>test(counter2)              # Counter = False</p>
+                    </code></pre>
+                    <p>В данном случае будем считать, что, если значение value в Counter меньше 1, то объект Counter будет рассматриваться как False, а при положительных значениях - как True. Благодаря этому мы можем использовать объект Counter в условных или циклических конструкциях. Так, в примере выше для тестирования определена функция test, которая в конструкции if..else проверяет значение объекта Counter и в зависимости от результата проверки выводит определенное сообщение на консоль.</p>
+                    <p>Или, например, мы могли бы использовать объект Counter в цикле while в качестве условия:</p>
+                    <pre><code>
+                        <p>class Counter:</p>
+                        <p>    def __init__(self, value):</p>
+                        <p>        self.value = value</p>
+                        <p>    def __bool__(self):</p>
+                        <p>        return self.value > 0</p>
+                        <p>     </p>
+                        <p>counter1 = Counter(3)</p>
+                        <p> </p>
+                        <p>while(counter1):</p>
+                        <p>    print("Counter1: ", counter1.value)</p>
+                        <p>    counter1.value -=1</p>
+                    </code></pre>
+                    <p>В данном случае цикл while будет выполняться, пока counter1 соответствует значению True (по сути покак его значение value больше 0)</p>
+                    <p>Операторы, которые возвращают значение bool</p>
+                    <p>Ряд операций призваны возвращать логическое значение True или False. Например, операции сравнения:</p>
+                    <pre><code>
+                        <p>class Counter:</p>
+                        <p>    def __init__(self, value):</p>
+                        <p>        self.value = value</p>
+                        <p>         </p>
+                        <p>    def __gt__(self, other):</p>
+                        <p>        return self.value > other.value</p>
+                        <p>    def __lt__(self, other):</p>
+                        <p>        return self.value < other.value</p>
+                        <p> </p>
+                        <p>     </p>
+                        <p>counter1 = Counter(1)</p>
+                        <p>counter2 = Counter(2)</p>
+                        <p>     </p>
+                        <p>if counter1 > counter2: </p>
+                        <p>    print("counter1 больше чем counter2")</p>
+                        <p>elif counter1 < counter2:</p>
+                        <p>    print("counter1 меньше чем counter2")</p>
+                        <p>else: </p>
+                        <p>    print("counter1 и counter2 равны")</p>
+                    </code></pre>
+                    <p>Здесь в классе Counter определены операторы < (функция __lt__()) и > (функция __gt__()). В данном случае сравниваем с другим объектом Counter. В реальности же сравниваем значения атрибутов двух объектов.</p>
+                    <pre><code>
+                        <p>def __gt__(self, other):</p>
+                        <p>    return self.value > other.value</p>
+                        <p>def __lt__(self, other):</p>
+                        <p>    return self.value < other.value</p>
+                        <p>Затем мы можем применять соответствующие операции к двум объектам Counter:</p>
+                        <p>1</p>
+                        <p>if counter1 > counter2:</p>
+                    </code></pre>
+                    <p>Операции обращения по индексу</p>
+                    <p>Ряд операторов позволяют обращаться к объекту по индексу, используя квадратные скобки:</p>
+                    <p>obj[index]</p>
+                    <p>Обычно подобные операции применяются по отношению к коллекциям, которые будут рассмотрены в последующих статьях. Например, можно использовать подобные операции для получения или изменения какого-то элемента списка значений. В реальности эти операции могут применяться к любому объекту, а используемый индекс также может представлять все что угодно. Рассмотрим операции обращения по индексу на примере получения значения по индексу:</p>
+                    <pre><code>
+                        <p>class Person:</p>
+                        <p>    def __init__(self, name, age):</p>
+                        <p>        self.__name = name</p>
+                        <p>        self.__age = age</p>
+                        <p>         </p>
+                        <p>    def __getitem__(self, prop):</p>
+                        <p>        if prop == "name": return self.__name</p>
+                        <p>        elif prop == "age": return self.__age</p>
+                        <p>        return None</p>
+                        <p>     </p>
+                        <p>tom = Person("Tom", 39)</p>
+                        <p> </p>
+                        <p>print("Name:", tom["name"])     # Name: Tom</p>
+                        <p>print("Age:", tom["age"])       # Age: 39</p>
+                        <p>print("Id:", tom["id"])         # Id: None</p>
+                    </code></pre>
+                    <p>Итак, здесь определен класс Person, содержит два приватных поля - __name и __age. Для реализации получения данных по индексу определена функция __getitem__(). В качестве второго параметра эту функцию передается значение, которое выполняет роль индекса. В нашем случае это будет название атрибута. И в зависимости от переданного значения возвращаем либо значение атрибута __name, либо значение атрибута __age. Если передано невалидное названия атрибута, то возвращаем None.</p>
+                    <p>Для получения значения по индесу передаем индекс - название атрибута в квадратных скобках:</p>
+                    <p>tom["name"]</p>
+                    <p>Проверка наличия свойства</p>
+                    <p>Оператор in позволяет проверить наличие определенного значения в последовательности - некотором наборе значений:</p>
+                    <p>значение in последовательность</p>
+                    <p>Если значение присутствует в последовательности, то возвращается True, иначе возвращается False. Например, проверим наличие свойства в объекте:</p>
+                    <pre><code>
+                        <p>class Person:</p>
+                        <p>    def __init__(self, name, age):</p>
+                        <p>        self.name = name</p>
+                        <p>        self.age = age</p>
+                        <p>         </p>
+                        <p>    def __contains__(self, prop):</p>
+                        <p>        if prop == "name" or prop == "age": return True</p>
+                        <p>        return False</p>
+                        <p>     </p>
+                        <p>tom = Person("Tom", 39)</p>
+                        <p>print("name" in tom)        # True</p>
+                        <p>print("id" in tom)          # False</p>
+                    </code></pre>
+                    <p>За реализацию оператора in отвечает функция __contains__(). В качестве первого параметра, как обычно, указывается текущий объект - тот объект, который стоит справа от оператора in. А в качестве второго параметра - проверяемое значение - оно указывается слева от in. В данном случае если второй параметр - равен "name" или "age", то возвращаем True. Что означает, что атрибут есть в объекте.</p>
+                    <p>Соответственно выражение "name" in tom возвратит True, а выражение "id" in tom возвратит False.</p>
+                    <p>Реализация операторов парами</p>
+                    <p>Некоторые операторы - операторы сравения удобнее реализовать парами. Если мы реализуем оператор ==, то можно сразу реализовать и оператор !=. Причем чтобы не прописывать одну и ту же логику по два раза, можно реализовать один оператор через другой:</p>
+                    <pre><code>
+                        <p>class Counter:</p>
+                        <p>    def __init__(self, value):</p>
+                        <p>        self.value = value</p>
+                        <p>     </p>
+                        <p>    def __eq__(self, other): return self.value == other.value</p>
+                        <p>    def __ne__(self, other): return not (self == other)</p>
+                        <p>     </p>
+                        <p>    def __gt__(self, other): return self.value > other.value</p>
+                        <p>    def __le__(self, other): return not (self > other)</p>
+                        <p>     </p>
+                        <p>    def __lt__(self, other): return self.value < other.value</p>
+                        <p>    def __ge__(self, other): return not (self < other)</p>
+                        <p>         </p>
+                        <p>c1 = Counter(1)</p>
+                        <p>c2 = Counter(2)</p>
+                        <p> </p>
+                        <p>print(c1 == c2)     # False</p>
+                        <p>print(c1 != c2)     # True</p>
+                        <p> </p>
+                        <p>print(c1 < c2)      # True</p>
+                        <p>print(c1 >= c2)     # False</p>
+                        <p>В данном случае оператора != возвращает инверсию результата оператора ==, который определен выше</p>
+                        <p>1</p>
+                        <p>2</p>
+                        <p>def __eq__(self, other): return self.value == other.value</p>
+                        <p>def __ne__(self, other): return not (self == other)</p>
+                    </code></pre>
+                    <p>Аналогично определены операторы < и >=, а также > и <=.</p>
                 </div>
                 <div id="them8">
                     <h4>Абстрактные классы и методы</h4>
+                    <p>Обычно классы отражают некоторые объекты окружающей действительности. Но иногда нам приходится работать с сущностями, которые не имеют конкретного воплощения. Например, сущность "животное". Есть конкретные животные - кошка, собака и так далее, но животное как таковое не имеет конкретного воплощения. Или сущность "геометрическая фигура". Есть прямоугольник, квадрат, круг, треугольник, но сама по себе геометрическая фигура также не имеет конкретного воплощения. И обычно для описания подобных сущностей применяются абстрактные классы.</p>
+                    <p>В языке Python все инструменты для создания абстрактных классов определены в специальном модуле abc, который надо дополнительно подключать в приложении</p>
+                    <p>import abc</p>
+                    <p>Ключевыми компонентами этого модуля является класс ABC и аннотация @abstractmethod. Класс ABC упрощает создание абстрактного класса, и все определяемые абстрактные классы наследуются от этого класса. Аннотация @abstractmethod предназначеня для создания абстрактного метода.</p>
+                    <p>Абстрактные классы определяются как обычные классы за тем исключением, что они наследуются от класса ABC из модуля abc. Например, определим абстрактный класс геометрической фигуры:</p>
+                    <pre><code>
+                        <p>import abc</p>
+                        <p>class Shape(abc.ABC):</p>
+                        <p>    pass</p>
+                    </code></pre>
+                    <p>Как правило, абстрактные классы объявляют некоторый общий функционал для классов наследников. Причем некоторый функционал может не иметь никакой реализации - его реализацию должны определить классы-наследники. Подобный функционал оформляется в классе в виде абстрактных методов. Например, класс геометрической фигуры может иметь методы вычисления периметра, площади и т.д. Мы не можем определить общую формулу для вычисления площади всех фигур - для каждой конкретной фигуры принцип вычисления площади может отличаться. Поэтому в классе фигуры мы можем определить метод вычисления площади как абстрактный. Для этого применяется аннотация @abstractmethod из модуля abc:</p>
+                    <pre><code>
+                        <p>import abc</p>
+                        <p>class Shape(abc.ABC):</p>
+                        <p>    @abc.abstractmethod </p>
+                        <p>    def area (self): pass       # площадь фигуры</p>
+                    </code></pre>
+                    <p>В данном случае метод area() определен как абстрактный. Так как ему не нужен конкретный функционал, в нем вызывается оператор pass</p>
+                    <p>Стоит отметить, что мы не можем напрямую создать объект абстрактного класса с абстрактными методами, используя его конструктор:</p>
+                    <pre><code>
+                        <p>import abc</p>
+                        <p>class Shape(abc.ABC):</p>
+                        <p>    @abc.abstractmethod </p>
+                        <p>    def area (self): pass       # площадь фигуры</p>
+                        <p> </p>
+                        <p>shape = Shape()     # ! Ошибка - так нельзя</p>
+                        <p>print(shape)</p>
+                    </code></pre>
+                    <p>Классы-наследники должны реализовать все абстрактные методы абстрактного класса. Например, определим класс прямоугольника:</p>
+                    <pre><code>
+                        <p>import abc</p>
+                        <p>class Shape(abc.ABC):</p>
+                        <p>    @abc.abstractmethod </p>
+                        <p>    def area (self): pass       # площадь фигуры</p>
+                        <p> </p>
+                        <p># класс прямоугольника </p>
+                        <p>class Rectangle(Shape):</p>
+                        <p>    def __init__(self, width, height):</p>
+                        <p>        self.width = width</p>
+                        <p>        self.height = height</p>
+                        <p>    def area (self): return self.width * self.height</p>
+                        <p>     </p>
+                        <p>rect = Rectangle(30, 50)</p>
+                        <p>print("Rectangle area:", rect.area())   # Rectangle area: 1500 </p>
+                    </code></pre>
+                    <p>Здесь класс прямоугольника Rectangle принимает через конструктор ширину и высоту и использует их для вычисления площади в методе area().</p>
+                    <p>Подобным образом можно определить и другие типы фигур. Например, добавим класс круга:</p>
+                    <pre><code>
+                        <p>import abc</p>
+                        <p>class Shape(abc.ABC):</p>
+                        <p>    @abc.abstractmethod </p>
+                        <p>    def area (self): pass       # площадь фигуры</p>
+                        <p> </p>
+                        <p># класс прямоугольника </p>
+                        <p>class Rectangle(Shape):</p>
+                        <p>    def __init__(self, width, height):</p>
+                        <p>        self.width = width</p>
+                        <p>        self.height = height</p>
+                        <p>    def area (self): return self.width * self.height</p>
+                        <p>     </p>
+                        <p># класс круга </p>
+                        <p>class Circle(Shape):</p>
+                        <p>    def __init__(self, radius):</p>
+                        <p>        self.radius = radius</p>
+                        <p>    def area (self): return self.radius * self.radius * 3.14</p>
+                        <p>     </p>
+                        <p> </p>
+                        <p>def print_area(shape):</p>
+                        <p>    print("Area:", shape.area())</p>
+                        <p>     </p>
+                        <p> </p>
+                        <p>rect = Rectangle(30, 50)</p>
+                        <p>circle = Circle(30)</p>
+                        <p>print_area(rect)        # Area: 1500</p>
+                        <p>print_area(circle)      # Area: 2826.0</p>
+                    </code></pre>
+                    <p>В данном случае для вывода площади фигуры определена функция print_area, которая принимает любую фигуру.</p>
+                    <p>При этом абстрактные классы также могут определять конструктор, атрибуты, неабстрактные методы, которые также могут применяться в классах-наследниках:</p>
+                    <pre><code>
+                        <p>import abc</p>
+                        <p>class Shape(abc.ABC):</p>
+                        <p>    def __init__(self, x, y):</p>
+                        <p>        self.x = x</p>
+                        <p>        self.y = y </p>
+                        <p>         </p>
+                        <p>    @abc.abstractmethod     </p>
+                        <p>    def area (self): pass       # абстрактны метод</p>
+                        <p>     </p>
+                        <p>    def print_point(self):          # неабстрактный метод</p>
+                        <p>        print("X:", self.x, "\tY:", self.y)</p>
+                        <p> </p>
+                        <p># класс прямоугольника </p>
+                        <p>class Rectangle(Shape):</p>
+                        <p>    def __init__(self, x, y, width, height):</p>
+                        <p>        super().__init__(x, y)</p>
+                        <p>        self.width = width</p>
+                        <p>        self.height = height</p>
+                        <p>    def area (self): return self.width * self.height</p>
+                        <p>     </p>
+                        <p> </p>
+                        <p>rect = Rectangle(10, 20, 100, 100)</p>
+                        <p>rect.print_point()      # X: 10   Y: 20</p>
+                    </code></pre>
+                    <p>Здесь абстрактный класс Shape через конструктор принимает координаты X и Y для точки, относительно которой создается фигура (например, для прямоугольника это могут быть координаты верхнего левого угла, для круга - центр). И также определен неабстрактный метод print_point, который выводит координаты точки на консоль.</p>
                 </div>
             </div>
         </div>
