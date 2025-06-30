@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../bootstrap.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>CodeUser</title>
 </head>
 
 <body>
@@ -33,10 +34,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../pagesPython/mainPage.html">Python</a></li>
-<!--                             <li><a class="dropdown-item" href="../pagesJavaScript/mianPage.html">JavaScript</a></li>
-                            <li><a class="dropdown-item" href="../pagesCSharp/">C#</a></li>
-                            <li><a class="dropdown-item" href="../pagesPHP/mainPage.html">PHP</a></li>
-                            <li><a class="dropdown-item" href="../pagesJava/mainPage.html">Java</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="../pagesJavaScript/mianPage.html">JavaScript</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="../pagesCSharp/">C#</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="../pagesPHP/mainPage.html">PHP</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="../pagesJava/mainPage.html">Java</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -49,7 +50,7 @@
     <!--  -->
     <div class="container">
         <div class="row">
-            <div class="col-3 m-2">
+            <div class="col-xl-3">
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
@@ -210,19 +211,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-9 m-2">
+            <div class="col-xl-9">
                 <h3>Глава 4. Обработка ошибок и исключений</h3>
                 <div id="them1">
                     <h4>Конструкция try...except...finally</h4>
                     <p>При программировании на Python мы можем столкнуться с двумя типами ошибок. Первый тип представляют синтаксические ошибки (syntax error). Они появляются в результате нарушения синтаксиса языка программирования при написании исходного кода. При работе в какой-либо среде разработки, например, в PyCharm, IDE сама может отслеживать синтаксические ошибки и каким-либо образом их выделять.</p>
                     <p>Второй тип ошибок представляют ошибки выполнения (runtime error). Они появляются в уже в процессе выполнения программы. Подобные ошибки еще называются исключениями. Например, в прошлых темах мы рассматривали преобразование строки в число:</p>
-                    <pre><code>
+                    <pre><code class="codeBlock">
                         <p>string = "5"</p>
                         <p>number = int(string)</p>
                         <p>print(number)</p>
                     </code></pre>
                     <p>Данный скрипт успешно выполнится, так как строка "5" вполне может быть конвертирована в число. Однако возьмем другой пример:</p>
-                    <pre><code>
+                    <pre><code class="codeBlock">
                         <p>string = "hello"</p>
                         <p>number = int(string)</p>
                         <p>print(number)</p>
@@ -230,7 +231,7 @@
                     <p>При выполнении этого скрипта будет выброшено исключение ValueError, так как строку "hello" нельзя преобразовать в число:</p>
                     <p>ValueError: invalid literal for int() with base 10: 'hello'</p>
                     <p>С одной стороны, здесь очевидно, что строка не представляет число, но мы можем иметь дело с вводом пользователя, который также может ввести не совсем то, что мы ожидаем:</p>
-                    <pre><code>
+                    <pre><code class="codeBlock">
                         <p>string = input("Введите число: ")</p>
                         <p>number = int(string)</p>
                         <p>print(number)</p>
@@ -238,7 +239,7 @@
                     <p>При возникновении исключения работа программы прерывается, и чтобы избежать подобного поведения и обрабатывать исключения в Python есть конструкция try..except.</p>
                     <p>try..except</p>
                     <p>Конструкция try..except имеет следующее формальное определение:</p>
-                    <pre><code>
+                    <pre><code class="codeBlock">
                         <p>try:</p>
                         <p>    инструкции</p>
                         <p>except [Тип_исключения]:</p>
@@ -247,7 +248,7 @@
                     <p>Весь основной код, в котором потенциально может возникнуть исключение, помещается после ключевого слова try. Если в этом коде генерируется исключение, то работа кода в блоке try прерывается, и выполнение переходит в блок except.</p>
                     <p>После ключевого слова except опционально можно указать, какое исключение будет обрабатываться (например, ValueError или KeyError). После слова except на следующей стоке идут инструкции блока except, выполняемые при возникновении исключения.</p>
                     <p>Рассмотрим обработку исключения на примере преобразовании строки в число:</p>
-                    <pre><code>
+                    <pre><code class="codeBlock">
                         <p>try:</p>
                         <p>    number = int(input("Введите число: "))</p>
                         <p>    print("Введенное число:", number)</p>
@@ -267,7 +268,7 @@
                     <p>Теперь все выполняется нормально, исключение не возникает, и соответственно блок except не выполняется.</p>
                     <p>Блок finally</p>
                     <p>При обработке исключений также можно использовать необязательный блок finally. Отличительной особенностью этого блока является то, что он выполняется вне зависимости, было ли сгенерировано исключение:</p>
-                    <pre><code>
+                    <pre><code class="codeBlock">
                         <p>try:</p>
                         <p>    number = int(input("Введите число: "))</p>
                         <p>    print("Введенное число:", number)</p>
@@ -279,7 +280,7 @@
                     </code></pre>
                     <p>Как правило, блок finally применяется для освобождения используемых ресурсов, например, для закрытия файлов.</p>
                     <p>Стоит отметить, что блок finally не обрабатывает исключения, и если мы используем этот блок без блока except, то при возникновении ошибки приложение аварийно завершится, как в следующем случае при делении числа на ноль:</p>
-                    <pre><code>
+                    <pre><code class="codeBlock">
                         <p>try:</p>
                         <p>    number = 3/0    # генерирует исключение ZeroDivisionError</p>
                         <p>    print(number)</p>
@@ -354,6 +355,48 @@
             </div>
         </div>
     </div>
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>О компании</h5>
+                    <p>Краткое описание вашей компании и ее деятельности.</p>
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Контакты</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt"></i> Адрес: г. Город, ул. Улица, д. 1</li>
+                        <li><i class="bi bi-phone"></i> Телефон: +7 (123) 456-78-90</li>
+                        <li><i class="bi bi-envelope"></i> Email: info@example.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Социальные сети</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-dark"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-dark"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-dark"><i class="bi bi-instagram fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2023 Ваша компания. Все права защищены.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#">Политика конфиденциальности</a></li>
+                        <li class="list-inline-item"><a href="#">Условия использования</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="../../js/bootstrap.bundle.min.js"></script>
 </body>
 

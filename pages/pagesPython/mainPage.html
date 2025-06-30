@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../bootstrap.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>CodeUser</title>
 </head>
 
 <body>
@@ -33,10 +34,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../pagesPython/mainPage.html">Python</a></li>
-<!--                             <li><a class="dropdown-item" href="../pagesJavaScript/mianPage.html">JavaScript</a></li>
-                            <li><a class="dropdown-item" href="../pagesCSharp/">C#</a></li>
-                            <li><a class="dropdown-item" href="../pagesPHP/mainPage.html">PHP</a></li>
-                            <li><a class="dropdown-item" href="../pagesJava/mainPage.html">Java</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="../pagesJavaScript/mianPage.html">JavaScript</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="../pagesCSharp/">C#</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="../pagesPHP/mainPage.html">PHP</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="../pagesJava/mainPage.html">Java</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -233,9 +234,76 @@
                 <p>Python также популярен не только в сфере обучения, но в написании конкретных программ в том числе коммерческого характера. В немалой степени поэтому для этого языка написано множество библиотек, которые мы можем использовать.</p>
                 <p>Кроме того, у данного языка программирования очень большое сообщество программистов, в интернете можно найти по данному языку множество полезных материалов, примеров, получить квалифицированную помощь специалистов.</p>
                 <h4>Установка Python и первая программа на Windows</h4>
+                <p>Установка</p>
+                <p>Для создания программ на Python нам потребуется интерпретатор. Для его установки перейдем на страницу https://www.python.org/downloads/ и найдем ссылку на загрузку последней версии языка:</p>
+                <img src="../../img/py1.png" alt="Установка Python">
+                <p>По нажатию на кнопку будет загружен соответствующей текущей ОС установщик Python. Следует учитывать, что Windows 7 и более ранние версии не поддерживаются.</p>
+                <p>На ОС Windows при запуске инсталлятора запускает окно мастера установки:</p>
+                <img src="../../img/py2.png" alt="Установка дистрибутива Python 3.12 на Windows">
+                <p>Здесь мы можем задать путь, по которому будет устанавливаться интерпретатор. Оставим его по умолчанию, то есть C:\Users\[имя_пользователя]\AppData\Local\Programs\Python\Python312\.</p>
+                <p>Кроме того, в самом низу отметим флажок "Add Python 3.12 to PATH", чтобы добавить путь к интерпретатору в переменные среды.</p>
+                <p>После этого мы можем проверить установку Python и его версию, запустив в командной строке/треминале команду python --version</p>
+                <p>C:\Users\eugen>python --version</p>
+                <p>Python 3.12.1</p>
+                <p>C:\Users\eugen></p>
+                <p>Запуск интерпретатора</p>
+                <p>После установки интерпретатора, как было описано в прошлой теме, мы можем начать создавать приложения на Python. Итак, создадим первую простенькую программу.</p>
+                <p>Если при установке не был изменен адрес, то на Windows Python по умолчанию устанавливается по пути C:\Users\[имя_пользователя]\AppData\Local\Programs\Python\Python[номер_версии]\ и представляет файл под названием python.exe.</p>
+                <p>Интерпретатор Python</p>
+                <p>Запустим интерпретатор и введем в него следующую строку:</p>
+                <p>print("hello")</p>
+                <p>И консоль выведет строку "hello":</p>
+                <p>Python 3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)] on win32</p>
+                <p>Type "help", "copyright", "credits" or "license" for more information.</p>
+                <p>>>> print("hello")</p>
+                <p>hello</p>
+                <p>>>></p>
+                <p>Для этой программы использовалась функция print(), которая выводит некоторую строку на консоль.</p>
             </div>
         </div>
     </div>
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>О компании</h5>
+                    <p>Краткое описание вашей компании и ее деятельности.</p>
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Контакты</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt"></i> Адрес: г. Город, ул. Улица, д. 1</li>
+                        <li><i class="bi bi-phone"></i> Телефон: +7 (123) 456-78-90</li>
+                        <li><i class="bi bi-envelope"></i> Email: info@example.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Социальные сети</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-dark"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-dark"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-dark"><i class="bi bi-instagram fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2023 Ваша компания. Все права защищены.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#">Политика конфиденциальности</a></li>
+                        <li class="list-inline-item"><a href="#">Условия использования</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="../../js/bootstrap.bundle.min.js"></script>
 </body>
 
